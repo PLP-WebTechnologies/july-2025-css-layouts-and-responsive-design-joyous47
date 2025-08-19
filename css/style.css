@@ -1,0 +1,114 @@
+/* --- Global Styles & Resets --- */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #004d40;
+}
+
+/* --- Flexbox for Header & Footer --- */
+.page-header, .page-footer {
+    background-color: #00796b;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* --- Flexbox for Navigation --- */
+.main-nav {
+    background-color: #004d40;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Flexbox container for navigation links */
+    justify-content: space-around;
+}
+
+.main-nav a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    background-color: #00897b;
+}
+
+/* --- Flexbox for Main Container --- */
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 1rem;
+    display: flex; /* Flexbox for the main content and sidebar */
+    flex-direction: column; /* Default to column stacking for mobile */
+    gap: 20px;
+}
+
+.sidebar {
+    background-color: #e0f2f1;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li a {
+    text-decoration: none;
+    color: #00796b;
+}
+
+/* --- CSS Grid for Articles --- */
+.articles-grid {
+    display: grid; /* CSS Grid for the article cards */
+    gap: 20px;
+    grid-template-columns: 1fr; /* Single column for mobile */
+}
+
+.article-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Tablet View: min-width 768px */
+@media (min-width: 768px) {
+    .main-container {
+        flex-direction: row; /* Change to row layout for tablets and desktops */
+    }
+
+    .main-content {
+        flex: 3; /* Main content takes up 3 parts of the space */
+    }
+
+    .sidebar {
+        flex: 1; /* Sidebar takes up 1 part of the space */
+    }
+
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for the articles */
+    }
+}
+
+/* Desktop View: min-width 1024px */
+@media (min-width: 1024px) {
+    .articles-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for desktops */
+    }
+}
